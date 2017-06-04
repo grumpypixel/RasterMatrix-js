@@ -93,7 +93,7 @@ class RasterMatrix {
     return this.buffer.slice();
   }
 
-  getPixelBlock(x, y, blockWidth, blockHeight, debug) {
+  getPixelBlock(x, y, blockWidth, blockHeight) {
     if (x < 0 || x > this.width - blockWidth || y < 0 || y > this.height - blockHeight) {
       return [];
     }
