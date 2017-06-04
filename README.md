@@ -24,7 +24,8 @@ rasterMatrix.centerInRect({ x: 0, y :0, width: canvas.width, height: canvas.heig
 
 Clearing the RasterMatrix before rendering each frame.
 <pre>
-// This line clears all raster cells with the value 'null':
+// This line clears all raster cells with the value 'null'.
+// Raster cells with a value of null are omitted during rendering.
 rasterMatrix.clear();
 </pre>
 or:
@@ -49,6 +50,14 @@ const colors = [
     '#0ff', '#f0f', '#ff0', '#888',
 ];
 rasterMatrix.setPixelBlock(x, y, width, height, colors);
+</pre>
+
+Rendering the RasterMatrix.
+<pre>
+const canvas = getCanvas();
+const context = canvas.getContext('2d');
+// [...] Set pixels. Do your worst.
+rasterMatrix.render(context);
 </pre>
 
 Happy coding!
